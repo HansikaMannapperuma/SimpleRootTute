@@ -1,18 +1,15 @@
-package com.example.simpleroot.Entity;
+package com.example.simpleroot.DTO;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class User {
-    @Id
+public class UserDTO {
     private int id;
     private String name;
     private String address;
+
 }
