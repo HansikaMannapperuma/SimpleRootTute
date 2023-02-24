@@ -24,8 +24,8 @@ public class UserController {
     }
 
     @PutMapping("/putUser")
-    public String putUser(){
-        return "update user";
+    public UserDTO putUser(UserDTO userDTO){
+        return userService.updateUser(userDTO);
     }
 
     @DeleteMapping("/deleteUser")
