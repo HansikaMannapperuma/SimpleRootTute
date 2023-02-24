@@ -15,7 +15,10 @@ public class UserService {
     private UserRepo userRepo;
     @Autowired
     private ModelMapper modelMapper;
+
+
     public UserDTO saveUser(UserDTO userDTO){
-        return UserDTO;
+        userRepo.save(modelMapper.map(userDTO,User.class));
+        return userDTO;
     }
 }
