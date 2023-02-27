@@ -29,7 +29,17 @@ public class UserController {
     }
 
     @DeleteMapping("/deleteUser")
-    public String deleteUser(){
-        return "delete user";
+    public boolean deleteUser(@RequestBody UserDTO userDTO){
+        return userService.deleteUser(userDTO);
+    }
+
+    @GetMapping("/getUserByUserId/{userId}")
+    public UserDTO getUserByUserId(@PathVariable String userId){
+        return userService.getUserByUserId(userId);
+    }
+
+    @GetMapping("/getUserByUserIdAndAddress/{userId}/{address}")
+    public UserDTO getUserByUserIdAndAddress(@PathVariable String userId,@PathVariable String address){
+        return userService.getUserByUserIdAndAddress(userId,address);
     }
 }
